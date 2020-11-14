@@ -48,7 +48,7 @@ module Arel # :nodoc: all
       elsif open_ended?(other.end)
         gteq(other.begin)
       elsif other.exclude_end?
-        gteq(other.begin).and(lt(other.end))
+        gt(other.begin).and(lt(other.end))
       else
         left = quoted_node(other.begin)
         right = quoted_node(other.end)
